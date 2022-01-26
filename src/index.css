@@ -1,3 +1,19 @@
+*{
+  margin: 0%;
+  /* overflow: hidden; */
+}
+
+:root{
+  --navbar-bg-color: #202225;
+  --navbar-tooltip-bg-color: #0f0f0f;
+  --navbar-icon-bg-color: #373a3f;
+  --hover-color-light: #4d515a40;
+  --hover-color-lighter: #4d515a9f;
+  --active-bg-color: #4d515a;
+  --add-friend-bg-color: #3ba55d;
+  --text-color-white: white;
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',

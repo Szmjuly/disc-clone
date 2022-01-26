@@ -1,0 +1,40 @@
+.activity__region{
+    display: flex;
+    flex-direction: column;
+    flex: .2612;
+
+    /* background-color: #36393f; */
+    border-left: 1px solid #41444a;
+    box-shadow: 0px 10px 10px 0px rgba(0, 0, 0, 0.75);
+    border-radius: 15px 0px 0px 0px;
+}
+
+.activity__header{
+    position: relative;
+    top: 20px;
+    padding: 2px 10px 0px 15px;
+
+}
+
+.activity__region .activity__header h2{
+    color: var(--text-color-white);
+}
+
+.activity__body{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.activity__body #quietActivity{
+    display: flex;
+    flex-direction: column;
+    
+    justify-content: center;
+    align-items: center;
+
+    position: relative;
+    top: 50px;
+    color: var(--text-color-white);
+    height: 75px;
+}

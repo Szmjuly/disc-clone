@@ -1,0 +1,54 @@
+.navbar{
+    display: flex;
+    flex: .0375;
+    flex-direction: column;
+    background-color: var(--navbar-bg-color);
+    padding: 10px 0px;
+    align-items: center;
+}
+
+.navbar__btm{
+    border-bottom: 2px solid #2d2f32;
+    border-top: 2px solid #2d2f32;
+
+    padding: 10px 0px 0px 0px;
+    height: fit-content;
+    max-height: 850px;
+
+    overflow: scroll;
+    scroll-snap-type: y mandatory;
+    scroll-behavior: smooth;
+    scrollbar-width: none;
+}
+
+.nav-icon{
+    display: flex;
+    background-color: var(--navbar-icon-bg-color);
+    border-radius: 999px;
+    width: 40px;
+    height: 40px;
+    border: none;
+    box-shadow: 0px 5px 7px -4px rgba(0, 0, 0, 0.75);
+    scroll-snap-align: end;
+    scroll-snap-stop: always;
+    margin: 0px 0px 10px 0px;
+}.nav-icon:hover{
+    background-color: rgba(55, 58, 63, 0.5);
+    cursor: pointer;
+}.nav-icon svg{
+    position: relative;
+    top: 48%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}.nav-icon:active{
+    transform: translateY(1px);
+}
+
+.tippy-box[data-theme ~= 'theme1']{
+    background-color: var(--navbar-tooltip-bg-color);
+    color: white;
+}
+
+.tippy-box[data-theme~='theme1'][data-placement^='right'] > .tippy-arrow::before {
+    border-right-color: var(--navbar-tooltip-bg-color);
+}

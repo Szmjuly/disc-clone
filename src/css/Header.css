@@ -1,0 +1,97 @@
+.friends__header{
+    display: flex;
+    flex-direction: row;
+
+    border-bottom: 1px solid #2b2e33;
+    box-shadow: 10px 0px 5px 0px rgba(0, 0, 0, 0.75);
+    border-radius: 0px 0px 0px 20px;
+}
+
+.page__name{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    position: relative;
+    padding: 10px;
+    max-height: fit-content;
+    margin-left: 10px;
+}
+
+.page__name h3{
+    margin-left: 10px;
+    color: white;
+}
+
+.page__name svg{
+    position: relative;
+    top: 8%;
+    color: #72767d;
+}
+
+.page__name hr{
+    position: relative;
+    left: 15%;
+}
+
+.friends__navbar{
+    display: flex;
+    flex-direction: row;
+    padding-left: 0px;
+    align-items: center;
+    width: 20vw;
+    height: 50px;
+    min-width:max-content;
+    justify-content: space-evenly;
+}
+
+.friends__navbar li{
+    list-style: none;
+    display: flex;
+    align-items: center;
+}
+
+.friends__navbar li h5{
+    color: #b9bbbe;
+    cursor: pointer;
+    text-decoration: none;
+
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    padding: 0px 10px;
+    margin: 10px 0px;
+}
+
+.friends__navbar li h5:hover{
+    color: white;
+    background-color: var(--hover-color-light);
+    border-radius: 5px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.friends__navbar li.active h5{
+    cursor: default;
+    color: var(--text-color-white);
+    background-color: var(--active-bg-color);
+    border-radius: 5px;
+    height: 20px;
+    padding: 0px 10px;
+    margin: 10px 0px;
+}
+
+
+#addFriend{
+    position: absolute;
+    display: flex;
+    background-color: var(--add-friend-bg-color);
+    border-radius: 5px;
+    color: var(--text-color-white);
+    width: 80px;
+    height: 20px;
+    align-items: center;
+    justify-content: center;
+}
