@@ -1,34 +1,35 @@
-.friends__header{
+.header{
     display: flex;
     flex-direction: row;
-
+    
     border-bottom: 1px solid #2b2e33;
-    box-shadow: 10px 0px 5px 0px rgba(0, 0, 0, 0.75);
-    border-radius: 0px 0px 0px 20px;
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.75);
+    border-radius: 20px 0px 0px 20px;
+    height: 47px;
 }
 
-.page__name{
+.header__title{
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
     position: relative;
-    padding: 10px;
+    padding: 10px 10px 10px 10px;
     max-height: fit-content;
     margin-left: 10px;
 }
 
-.page__name h3{
+.header__title h3{
     margin-left: 10px;
     color: white;
 }
 
-.page__name svg{
+.header__title svg{
     position: relative;
     top: 8%;
     color: #72767d;
 }
 
-.page__name hr{
+.header__title hr{
     position: relative;
     left: 15%;
 }

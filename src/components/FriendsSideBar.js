@@ -3,13 +3,13 @@ import SidebarRow from './SidebarRow';
 import PeopleIcon from '@mui/icons-material/People';
 import AddIcon from '@mui/icons-material/Add';
 
-function SideBar() {
+function FriendsSideBar() {
   return <div className='sidebar'>
-            <div className='sidebar__search'>
+            <header className='sidebar__search'>
                 <input type={'text'} placeholder='Search for Someone'/>
-            </div>
-
-            <hr style={{color: '#2b2e33', borderTop: '1px solid'}}/>
+            </header>
+                  
+            <hr style={{color: 'var(--sidebar-seperator-color)', borderTop: '1px solid'}}/>
 
             <div className='sidebar__top'>
                 <SidebarRow Icon={PeopleIcon} Title={'Friends'}/>
@@ -20,10 +20,13 @@ function SideBar() {
                     <h5>Direct Messages</h5>
                     <AddIcon fontSize='small'/>
                 </div>
-                <SidebarRow />
+                
+                <section className='channel__list'>
+                    
+                </section>
             </div>
 
         </div>;
 }
 
-export default SideBar;
+export default FriendsSideBar;

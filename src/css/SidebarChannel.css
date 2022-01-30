@@ -1,0 +1,31 @@
+.sidebar__channel{
+    display: flex;
+    padding: 0px 10px;
+    margin: 10px 15px 0px 15px;
+    border-radius: 5px;
+}
+
+.sidebar__channel h4{
+    display: flex;
+    flex-direction: row;
+    color: var(--s_sidebar-text-grey-1);
+    align-items: center;
+}
+
+.sidebar__channel:hover h4{
+    color: var(--s_sidebar-text-hover);
+}
+
+.sidebar__channel:hover{
+    background-color: var(--hover-color-light);
+    cursor: pointer;
+}
+
+.sidebarChannel__hash{
+    font-size: 28px;
+    padding: 0px 8px 8px 0px;
+}
+
+.sidebar__channel svg{
+    color: var(--s_sidebar-text-grey-1);
+}

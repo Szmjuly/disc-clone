@@ -44,6 +44,14 @@
     transform: translateY(1px);
 }
 
+.homeBtn{
+    background-color: var(--focus-color);
+}
+
+.homeBtn:hover{
+    background-color: #d2d7df;
+}
+
 .tippy-box[data-theme ~= 'theme1']{
     background-color: var(--navbar-tooltip-bg-color);
     color: white;

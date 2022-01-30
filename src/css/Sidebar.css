@@ -1,9 +1,10 @@
 .sidebar{
     display: flex;
     flex-direction: column;
-    background-color: #2f3136;
+    background-color: var(--sidebar-bg-color);
     flex: .125;
-    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.75);
+    box-shadow: -10px 0px 10px 0px rgba(0, 0, 0, 0.75);
+    border-radius: 20px 0px 0px 0px;
 }
 
 .sidebar__row{
@@ -48,7 +49,7 @@
 }
 
 .dm__row svg:hover{
-    
+    color: #dcddde;
     cursor: pointer;
 }
 
@@ -77,8 +78,85 @@
     width: 205px;
 
     padding: 0px 10px;
-    margin: 10px 0px 10px 0px;
-
-}.sidebar__search > input:focus {
+}
+.sidebar__search > input:focus {
     outline: none !important;
+}
+
+.sidebar header{
+    display: flex;
+    flex-direction: row;
+    padding: 7px 15px;
+}
+
+.sidebar header h2{
+    color: var(--text-color-white);
+}
+
+.channels section{
+    margin: 25px 0px;
+}
+
+section.txt__channels{
+    margin-top: 10px;
+}
+
+.channels header{
+    display: flex;
+    flex: 1;
+    align-items: center;
+    padding: 0px 1px;
+}
+
+.channels header h5{
+    color: #7c8186;
+    font-size: 12px;
+    margin-left: 1px;
+}
+
+.channels header svg{
+    color: #7c8186;
+    font-size: small;
+}
+
+.channels header:hover{
+    cursor: pointer;
+}
+
+.channels header:hover h5{
+    color: #dcddde;
+}
+
+.channels header:hover svg{
+    color: #dcddde;
+}
+
+.channels section.channel__list{
+    margin: 0px;
+}
+
+.channels header:hover button svg{
+    color: #7c8186;
+}
+
+.channels header button svg:hover{
+    cursor: pointer;
+    color: #dcddde;
+}
+
+.channels header h5{
+    display: flex;
+    flex-direction: row;
+    flex: .95;
+    align-items: center;
+}
+
+.rotateSvg{
+    transform: rotate(90deg);
+}
+
+.channels header .addChannelBtn{
+    background: transparent;
+    border: none;
+    cursor: pointer;
 }

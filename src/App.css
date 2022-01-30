@@ -1,4 +1,49 @@
 .app{
     display: flex;
     height: 100vh;
+    background-color: var(--navbar-bg-color);
+}
+
+.page{
+    display: flex;
+    flex-direction: row;
+    flex: 1;
+
+    background-color: var(--sidebar-bg-color);
+    box-shadow: -1px 0px 15px 0px rgba(0, 0, 0, 0.75);
+    border-radius: 20px 0px 0px 0px;
+}
+
+.friends__page{
+    display: flex;
+    flex-direction: column;
+    flex: .875;
+    background-color: #36393f;
+    height: 100vh;
+    border-radius: 20px 0px 0px 0px;
+    box-shadow: -1px 0px 15px 0px rgba(0, 0, 0, 0.75);
+
+}
+
+.server__page{
+    display: flex;
+    flex-direction: column;
+    flex: .875;
+
+    background-color: #36393f;
+    height: 100vh;
+    border-radius: 20px 0px 0px 0px;
+    box-shadow: -1px 0px 15px 0px rgba(0, 0, 0, 0.75);
+}
+
+.page__body{
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+}
+
+.left__side{
+    display: flex;
+    flex-direction: column;
+    flex: .738;
 }

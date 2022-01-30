@@ -1,6 +1,6 @@
 *{
   margin: 0%;
-  /* overflow: hidden; */
+  overflow: hidden;
 }
 
 :root{
@@ -9,9 +9,16 @@
   --navbar-icon-bg-color: #373a3f;
   --hover-color-light: #4d515a40;
   --hover-color-lighter: #4d515a9f;
+  --hover-color-lightest: #4d515a4b;
   --active-bg-color: #4d515a;
   --add-friend-bg-color: #3ba55d;
   --text-color-white: white;
+  --sidebar-bg-color: #2f3136;
+  --sidebar-seperator-color: #282b30;
+  --s_sidebar-text-grey-1: #7c8186;
+  --s_sidebar-text-hover: #dcddde;
+  --members-bar-text-color: #8e9297;
+  --focus-color: #d0f4ea;
 }
 
 body {

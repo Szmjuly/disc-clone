@@ -1,10 +1,14 @@
 import React from 'react';
 import '../css/Header.css'
+import $ from 'jquery'
 
 export default function Header({Icon, pageName, navbar, item1, item2, item3, item4, addFriend, isChatName}) {
-  return <div className='friends__header'>
+    $(document).on('click', 'ul li', function(){
+        $(this).addClass('active').siblings().removeClass('active');
+      });
+  return <div className='header'>
 
-            <div className='page__name'>
+            <div className='header__title'>
                 {Icon && <Icon />}
                 <h3>{isChatName === 1 && <h3>@</h3>}{pageName}</h3>
                 <hr />
