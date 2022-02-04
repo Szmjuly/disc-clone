@@ -1,0 +1,26 @@
+.sidebar-dms{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    flex: 1;
+    padding: 10px;
+}
+
+.dm{
+    display: flex;
+    justify-content: space-between;
+    color: #7c8186;
+}
+
+.dm:hover{
+    color: #dcddde;
+}
+
+.dm:hover svg{
+    color: #7c8186;
+}
+
+.dm svg:hover{
+    color: #dcddde;
+    cursor: pointer;
+}

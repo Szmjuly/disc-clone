@@ -1,0 +1,28 @@
+.sidebar-userInfo{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: var(--s_sidebar-text-grey-1);
+    background-color: #2f3135;
+    padding: 10px;
+    border-top: 1px solid var(--s_sidebar-text-grey-1);
+}
+
+.sidebar-userInfo-profile{
+    flex: 1;
+    margin: 0px 3px 0px 5px;
+}
+
+.sidebar-userInfo-profile h3{
+    color: white;
+    font-size: 12px;
+}
+
+.sidebar-userInfo-icons .MuiSvgIcon-root{
+    padding: 2px;
+}
+
+.sidebar-userInfo-icons .MuiSvgIcon-root:hover{
+    cursor: pointer;
+    color: var(--s_sidebar-text-hover);
+}

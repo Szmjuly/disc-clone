@@ -1,0 +1,11 @@
+.server__channels{
+    display: flex;
+    flex-direction: column;
+    margin: 10px 10px;
+
+    max-height: 770px;
+
+    overflow-y: scroll;
+    scroll-behavior: smooth;
+    scrollbar-width: none;
+}

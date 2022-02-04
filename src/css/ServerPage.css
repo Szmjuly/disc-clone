@@ -1,13 +1,13 @@
 .server__left__side{
     display: flex;
     flex-direction: column;
-    flex: 1.5;
+    flex: 0.875;
 }
 
 .server__right__side{
     display: flex;
     flex-direction: column;
-    flex: .27;
+    flex: .125;
     box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.75);
 }
 

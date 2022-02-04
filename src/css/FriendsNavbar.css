@@ -1,0 +1,43 @@
+.friends__navbar{
+    display: flex;
+    flex-direction: row;
+    margin: 0 13px;
+    align-items: center;
+    justify-content: space-evenly;
+    min-width: fit-content;
+}
+
+.friends__navbar li{
+    padding: 3px 8px;
+    border-radius: 5px;
+}
+
+.friends__navbar li h5{
+    color: var(--header-txt-color);
+}
+
+.friends__navbar li:hover{
+    background-color: var(--header-hover-bg-color);
+    cursor: pointer;
+}
+
+.friends__navbar li:hover h5{
+    color: var(--header-active-text-color);
+}
+
+.friends__navbar li.active{
+    cursor: default;
+    background-color: var(--active-bg-color);
+}
+
+.friends__navbar li.active h5{
+    color: var(--text-color-white);
+}
+
+#addFriend{
+    background-color: var(--addFriend-bg-color);
+}
+
+#addFriend h5{
+    color: var(--addFriend-txt-color);
+}

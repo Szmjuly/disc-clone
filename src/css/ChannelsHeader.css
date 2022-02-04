@@ -1,0 +1,42 @@
+.channel__list-header{
+    display: flex;
+    align-items: center;
+}
+
+.channel__list-header h5{
+    color: #7c8186;
+    font-size: 12px;
+    margin-left: 1px;
+}
+
+.channel__list-header svg{
+    color: #7c8186;
+    font-size: small;
+}
+
+.channel__list-header:hover{
+    cursor: pointer;
+}
+
+.channel__list-header:hover h5{
+    color: #dcddde;
+}
+
+.channel__list-header:hover svg{
+    color: #dcddde;
+}
+
+.channel__list-header button{
+    cursor: pointer;
+    border: none;
+    background: transparent;
+    margin-left: auto;
+}
+
+.channel__list-header:hover button svg{
+    color: #7c8186;
+}
+
+.channel__list-header:hover button svg:hover{
+    color: #dcddde;
+}

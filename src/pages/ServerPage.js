@@ -1,16 +1,19 @@
-import React from 'react';
+//Styling
 import '../css/ServerPage.css'
 
-import TagIcon from '@mui/icons-material/Tag';
+//Icons
+import {Tag} from '@mui/icons-material';
+
+//Components
 import Header from '../components/Header';
 import ChatInput from '../components/ChatInput'
 import ServerSideBar from '../components/ServerSideBar';
 
 export default function ServerPage() {
   return <main className='page'>
-      <ServerSideBar />
+            <ServerSideBar />
             <section className='server__page'>
-                <Header Icon={TagIcon} pageName={'general'}/> 
+                <Header Icon={Tag} pageName={'general'} generalNavbar={1}/> 
 
                 <section className='page__body'>
 
@@ -25,7 +28,6 @@ export default function ServerPage() {
                     <section className='server__right__side'>
                         <header>
                             <h2>Members: </h2>
-                            {/* <p>online - </p> */}
                         </header>
                     </section>
 
@@ -33,3 +35,4 @@ export default function ServerPage() {
             </section>
         </main>;
 }
+

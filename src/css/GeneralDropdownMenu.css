@@ -1,0 +1,101 @@
+.dropdown{
+    position: absolute;
+    top: 38px;
+    width: 300px;
+    transform: translateX(-87%);
+
+    background-color: var(--bg-color1);
+    box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.75);
+    border: 1px solid black;
+    border-radius: 15px;
+    padding: 1rem;
+    overflow: hidden;
+
+    transition: height var(--header-dropdown-speed) ease;
+}
+
+.dropdown-avatar{
+    display: flex;
+    align-items: center;
+    height: 50px;
+    padding: 0.25rem;
+    border-radius: 15px;
+    transition: background var(--header-dropdown-speed);
+    margin-bottom: 10px;
+}
+
+.dropdown-avatar .MuiAvatar-root{
+    margin-right: 15px;
+}
+
+.dropdown-avatar .dropdown-name h6{
+    color: var(--text-color-gray-dark2);
+}
+
+.dropdown-avatar:hover{
+    background-color: var(--header-dropdown-hover);
+}
+
+.dropdown-item{
+    height: 50px;
+    display: flex;
+    align-items: center;
+
+    border-radius: 15px;
+    transition: background var(--header-dropdown-speed);
+    padding: 0.25rem;
+}
+
+.dropdown-icon-left{
+    margin-right: 15px;
+    margin-left: 5px;
+}
+
+.dropdown-item:hover{
+
+    background-color: var(--header-dropdown-hover);
+}
+
+.dropdown-icon-right{
+    margin-left: auto;
+    margin-right: 5px;
+}
+
+.dropdown-item .MuiAvatar-root{
+    margin-right: 10px;
+}
+
+.menu{
+    width: 100%;
+}
+
+/* CSS Transitions */
+
+.menu-primary-enter{
+    position: absolute;
+    transform: translateX(-110%);
+}
+.menu-primary-active{
+    transform: translateX(0%);
+    transition: all var(--header-dropdown-speed) ease;
+}
+.menu-primary-exit{
+    position: absolute;
+    transform: translateX(0%);
+}
+.menu-primary-exit-active{
+    transform: translateX(-110%);
+    transition: all var(--header-dropdown-speed) ease;
+}
+
+.menu-secondary-enter{
+    transform: translateX(110%);
+}
+.menu-secondary-active{
+    transform: translateX(0%);
+    transition: all var(--header-dropdown-speed) ease;
+}
+.menu-secondary-exit-active{
+    transform: translateX(110%);
+    transition: all var(--header-dropdown-speed) ease;
+}

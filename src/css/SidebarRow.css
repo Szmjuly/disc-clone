@@ -1,0 +1,24 @@
+.sidebar__row{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 10px 10px 10px 10px;
+    color: #8e9297;
+    padding: 0px 10px;
+}
+
+.sidebar__row h2{
+    margin-left: 10px;
+}
+
+.sidebar__row:hover{
+    background-color: rgba(112, 115, 124, 0.25);
+    cursor: pointer;
+    border-radius: 10px;
+    color: #dcddde;
+}
+
+.sidebar__row svg{
+    position: relative;
+    top: 2px;
+}

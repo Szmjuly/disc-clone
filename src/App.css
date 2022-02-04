@@ -17,7 +17,7 @@
 .friends__page{
     display: flex;
     flex-direction: column;
-    flex: .875;
+    flex: 1;
     background-color: #36393f;
     height: 100vh;
     border-radius: 20px 0px 0px 0px;
@@ -28,7 +28,7 @@
 .server__page{
     display: flex;
     flex-direction: column;
-    flex: .875;
+    flex: 1;
 
     background-color: #36393f;
     height: 100vh;

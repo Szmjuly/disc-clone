@@ -1,0 +1,21 @@
+.header__title{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    justify-content: flex-end;
+    min-width: fit-content;
+
+}
+
+.header__title h3{
+    margin-left: 10px;
+    color: var(--text-color-white);
+    border-right: 2px solid #72767d;
+    padding-right: 10px;
+}
+
+.header__title svg{
+    color: var(--header-title-svg-color);
+    padding-top: 3px;
+}

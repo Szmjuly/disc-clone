@@ -1,0 +1,28 @@
+.header-nav{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+    justify-content: flex-end;
+}
+
+.header-nav-itm{
+    width: fit-content;
+    border-radius: 40%;
+    margin: 5px;
+}
+
+.dropdown-btn{
+    background-color: var(--header-btn-color);
+    box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.5);
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.dropdown-btn:active{
+    transform: translateY(1px);
+}

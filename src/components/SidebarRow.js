@@ -1,4 +1,5 @@
-import '../css/Sidebar.css'
+//Styling
+import '../css/SidebarRow.css'
 
 export default function SidebarRow({Icon, Title}) {
   return <div className='sidebar__row'>

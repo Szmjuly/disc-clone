@@ -21,9 +21,7 @@
 }
 
 .friend__search .MuiSvgIcon-root{
-    background-color: transparent;
-    position: fixed;
-    right: 24%;
+    padding: 10px
 }
 
 .friend__search input{

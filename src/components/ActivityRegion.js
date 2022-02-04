@@ -1,4 +1,4 @@
-import React from 'react';
+//Styling
 import '../css/ActivityRegion.css'
 
 export default function ActivityRegion() {

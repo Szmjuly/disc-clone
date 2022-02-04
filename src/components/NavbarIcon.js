@@ -1,5 +1,7 @@
-import React from 'react';
+//Tippy
 import Tippy from '@tippyjs/react';
+
+//Styling
 import 'tippy.js/dist/tippy.css'
 
 export default function NavbarIcon({isHomeBtn, Icon, Tooltip, onClick}) {

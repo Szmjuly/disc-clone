@@ -8,8 +8,12 @@
 .login__page{
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
     height: 100%;
+}
+
+.login__btns{
+    display: grid;
+    gap: 15px;
 }
 
 .login__page button{

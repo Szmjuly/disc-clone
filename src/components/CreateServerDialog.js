@@ -1,10 +1,15 @@
-import Add from '@mui/icons-material/Add';
+//React
+import { useState } from 'react';
+
+//Icons
+import {Add} from '@mui/icons-material';
+
+//Components
 import { Avatar, Dialog, DialogTitle, ListItemAvatar, ListItem, ListItemText, List } from '@mui/material';
-import React from 'react';
 
 export default function CreateServerDialog(props) {
     let { onClose, open } = props;
-    const [createServerOpen, setCreateServerOpen] = React.useState(false);
+    const [createServerOpen, setCreateServerOpen] = useState(false);
 
     const handleCreateServer = () => {
         setCreateServerOpen(true);

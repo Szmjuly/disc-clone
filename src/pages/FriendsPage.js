@@ -1,11 +1,13 @@
-import React from 'react';
-import '../css/friendsPage.css'
+//Styling
+import '../css/FriendsPage.css'
 
-import SearchIcon from '@mui/icons-material/Search';
-import PeopleIcon from '@mui/icons-material/People'
+//Icons
+import {Search, People} from '@mui/icons-material';
+
+//Components
+import FriendsSideBar from '../components/FriendsSideBar'
 import ActivityRegion from '../components/ActivityRegion';
 import Header from '../components/Header';
-import FriendsSideBar from '../components/FriendsSideBar'
 
 export default function FriendsPage() {
   return <main className='page'>
@@ -13,12 +15,13 @@ export default function FriendsPage() {
            
             <section className='friends__page'>
 
-            <Header Icon={PeopleIcon} pageName={'Friends'} navbar={1} item1={'Online'} item2={'All'} item3={'Pending'} item4={'Blocked'} addFriend={1}/>
+            <Header Icon={People} pageName={'Friends'} friendsNavbar={1} generalNavbar={1}/>
+
                         <section className='page__body'>
                             <section className='left__side'>
                                 <div className='friend__search'>
                                     <input type={'text'} placeholder='Looking for someone?'/>
-                                    <SearchIcon />
+                                    <Search />
                                 </div>
                             </section>
 

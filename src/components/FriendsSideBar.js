@@ -1,32 +1,35 @@
+//Styling
 import '../css/Sidebar.css'
+
+//Icons
+import {People} from '@mui/icons-material';
+
+//Components
+import SidebarUserInfo from './SidebarUserInfo';
 import SidebarRow from './SidebarRow';
-import PeopleIcon from '@mui/icons-material/People';
-import AddIcon from '@mui/icons-material/Add';
+import SidebarSearchBar from './SidebarSearchBar';
+import SidebarDmSection from './SidebarDmSection';
 
-function FriendsSideBar() {
-  return <div className='sidebar'>
-            <header className='sidebar__search'>
-                <input type={'text'} placeholder='Search for Someone'/>
-            </header>
-                  
-            <hr style={{color: 'var(--sidebar-seperator-color)', borderTop: '1px solid'}}/>
+//Redux
+import { useSelector } from 'react-redux';
+import { selectUser } from '../features/userSlice';
 
-            <div className='sidebar__top'>
-                <SidebarRow Icon={PeopleIcon} Title={'Friends'}/>
-            </div>
 
-            <div className='sidebar__btm'>
-                <div className='dm__row'>
-                    <h5>Direct Messages</h5>
-                    <AddIcon fontSize='small'/>
-                </div>
-                
-                <section className='channel__list'>
-                    
-                </section>
-            </div>
+export default function FriendsSideBar() {
+    const currentUser = useSelector(selectUser);
 
-        </div>;
+    return <section className='sidebar'>
+
+                <header className='sidebar-friends-header'>
+                    <SidebarSearchBar />
+                    <SidebarRow Icon={People} Title={'Friends'}/>
+                </header>
+
+                <SidebarDmSection />
+
+                <footer className='sidebar-footer'>
+                    <SidebarUserInfo displayName={currentUser.displayName} avatar={currentUser.photo} uid={currentUser.uid}/>
+                </footer>
+
+            </section>;
 }
-
-export default FriendsSideBar;
