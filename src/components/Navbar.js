@@ -16,9 +16,13 @@ import NavbarIcon from './NavbarIcon';
 import {db} from '../firebase/firebase'
 import { addDoc, collection, serverTimestamp } from 'firebase/firestore';
 import useFirestore from '../hooks/useFirestore';
+import { useDispatch } from 'react-redux';
+import { setServerInfo } from '../features/serverSlice';
 
 export default function Navbar() {
   let navigate = useNavigate();
+  const dispatch = useDispatch();
+
   const [createServerError, setCreateServerError] = useState();
   const { docs } = useFirestore('servers');
 
@@ -38,7 +42,6 @@ export default function Navbar() {
   }
 
   function handleHomeRoute(){ navigate('/'); }
-  function handleServerRoute(){ navigate('/server'); }
 
     return (<div className='navbar'>
               <section className='navbar__top'>
@@ -49,7 +52,7 @@ export default function Navbar() {
                 <section className='server__list'>
                   {docs.map((server) => (
                     <div key={server.id}>
-                      <NavbarIcon Tooltip={server.serverName} onClick={handleServerRoute} />
+                      <NavbarIcon Tooltip={server.serverName} onClick={() => {dispatch( setServerInfo({ serverId: server.id, serverName: server.serverName }) ); navigate('/server'); }} />
                     </div>
                   ))}
                 </section>

@@ -10,13 +10,15 @@ import SidebarVoiceConnected from './SidebarVoiceConnected';
 //Redux Stuff
 import { useSelector } from 'react-redux';
 import { selectUser } from '../features/userSlice';
+import { selectServerName } from '../features/serverSlice'
 
 export default function ServerSideBar() {
     const currentUser = useSelector(selectUser);
+    const serverName = useSelector(selectServerName);
 
     return <section className='sidebar'>
               <header>
-                <ServerTitle />
+                <ServerTitle server={serverName} />
                 <ServerChannels />
               </header>
 

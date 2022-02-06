@@ -32,7 +32,8 @@ export default function App() {
           photo: authenticatedUser.photoURL,
           email: authenticatedUser.email,
           displayName: authenticatedUser.displayName,
-        }))
+        }));
+
       }
       else{
         dispatch(logout());

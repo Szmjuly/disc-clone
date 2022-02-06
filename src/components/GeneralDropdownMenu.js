@@ -70,7 +70,6 @@ export default function GeneralDropdownMenu() {
                 <div className='menu'>
                     <DropDownAvatar avatar={currentUser.photo}>{currentUser.displayName}</DropDownAvatar>
                     <hr style={{marginBottom: '10px'}}/>
-                    {console.log(currentUser)}
                     <DropDownItem leftIcon={<Settings />} 
                                   rightIcon={<ArrowDropDown />} 
                                   goToMenu='settings'>

@@ -9,12 +9,13 @@ import '../css/ServerChannel.css'
 import ServerChannel from './ServerChannel';
 import ChannelsHeader from './ChannelsHeader';
 
-//Firebase
+//Firebase and Redux
 import useFirestore from '../hooks/useFirestore'
 import {db} from '../firebase/firebase'
-import { addDoc, collection, doc, serverTimestamp } from 'firebase/firestore';
-import { useDispatch } from 'react-redux';
+import { addDoc, collection, serverTimestamp } from 'firebase/firestore';
+import { useDispatch, useSelector } from 'react-redux';
 import { setChannelInfo } from '../features/channelSlice';
+import { selectServerId } from '../features/serverSlice'
 
 export default function SidebarTextChannels() {
     const dispatch = useDispatch();
@@ -23,15 +24,14 @@ export default function SidebarTextChannels() {
     const [createTxtChannelError, setCreateTxtChannelError] = useState();
 
     const { docs } = useFirestore('text-channels');
-
-
+    const serverId = useSelector(selectServerId);
 
     // Simple make into a dialog popup
     function handleAddTextChannel(e){
         const channelName = prompt("Enter the channel name: ");
-
+    
         if(channelName){
-            addDoc(collection(db, 'text-channels'), {
+            addDoc(collection(db ,'servers/' + serverId + '/txt-channels'), {
                 channelName: channelName,
                 createdAt: serverTimestamp()
             })
