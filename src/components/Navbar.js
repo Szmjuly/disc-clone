@@ -34,6 +34,9 @@ export default function Navbar() {
         serverName: serverName,
         createdAt: serverTimestamp(),
       })
+      .then(() => {
+        addDoc(collection(db, "users/"))
+      })
       .catch((error) => {
         setCreateServerError(error);
         console.log("🚀 ~ file: Navbar.js ~ line 29 ~ handleAddServer ~ createServerError", createServerError);

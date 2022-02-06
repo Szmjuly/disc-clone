@@ -1,10 +1,9 @@
 import '../css/LoginPage.css'
 import { Button } from '@mui/material';
-import { auth, provider } from '../firebase/firebase';
+import { db, auth, provider } from '../firebase/firebase';
 import { signInWithPopup } from 'firebase/auth'
 
-import { serverTimestamp, setDoc, doc } from 'firebase/firestore';
-import { db } from '../firebase/firebase';
+import { serverTimestamp, setDoc, doc, collection, addDoc } from 'firebase/firestore';
 
 export default function LoginPage() { 
     const handleSignIn = () =>{
@@ -16,7 +15,8 @@ export default function LoginPage() {
         // Google Login...
         signInWithPopup(auth, provider)
         .then((authenticatedUser) => {
-            setDoc(doc(db, 'accounts/users/google', authenticatedUser.user.email), {
+            setDoc(doc(db, 'users/', authenticatedUser.user.uid), {
+                accountType: "Google SignIn",
                 userName: authenticatedUser.user.displayName,
                 displayName: authenticatedUser.user.displayName,
                 uid: authenticatedUser.user.uid,
