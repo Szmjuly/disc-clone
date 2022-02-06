@@ -1,8 +1,8 @@
 import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
-    channelId: null,
-    channelName: null,
+    serverId: null,
+    serverName: null,
 };
 
 export const serverSlice = createSlice({
@@ -10,15 +10,16 @@ export const serverSlice = createSlice({
   initialState,
 
   reducers: {
-    setChannelId: (state, action) => {
-      state.server = action.payload;
+    setServerInfo: (state, action) => {
+      state.serverId = action.payload.serverId;
+      state.serverName = action.payload.serverName;
     },
   },
 });
 
-export const { setChannelId } = serverSlice.actions;
+export const { setServerInfo } = serverSlice.actions;
 
-export const selectChannelId = (state) => state.server.channelId;
-export const selectChannelName = (state) => state.server.channelName;
+export const selectServerId = (state) => state.server.serverId;
+export const selectServerName = (state) => state.server.serverName;
 
 export default serverSlice.reducer;

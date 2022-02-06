@@ -3,20 +3,27 @@ import { useState } from 'react';
 
 //Styling
 import '../css/Channels.css'
+import '../css/ServerChannel.css'
 
 //Components
 import ServerChannel from './ServerChannel';
 import ChannelsHeader from './ChannelsHeader';
 
 //Firebase
-import useGetCollectionDocs from '../hooks/useGetCollectionDocs'
+import useFirestore from '../hooks/useFirestore'
 import {db} from '../firebase/firebase'
-import { addDoc, collection, serverTimestamp } from 'firebase/firestore';
+import { addDoc, collection, doc, serverTimestamp } from 'firebase/firestore';
+import { useDispatch } from 'react-redux';
+import { setChannelInfo } from '../features/channelSlice';
 
 export default function SidebarTextChannels() {
+    const dispatch = useDispatch();
+
     const [tExpanded, setTExpanded] = useState(false);
-    const [addTextError, setAddTextError] = useState();
-    const { collectionDocs } = useGetCollectionDocs("channels");
+    const [createTxtChannelError, setCreateTxtChannelError] = useState();
+
+    const { docs } = useFirestore('text-channels');
+
 
 
     // Simple make into a dialog popup
@@ -24,13 +31,13 @@ export default function SidebarTextChannels() {
         const channelName = prompt("Enter the channel name: ");
 
         if(channelName){
-            addDoc(collection(db, 'channels'), {
+            addDoc(collection(db, 'text-channels'), {
                 channelName: channelName,
                 createdAt: serverTimestamp()
             })
             .catch((error) => {
-                setAddTextError(error);
-                console.log(addTextError);
+                setCreateTxtChannelError(error);
+                console.log("🚀 ~ file: ServerTextChannels.js ~ line 37 ~ handleAddTextChannel ~ createTxtChannelError", createTxtChannelError);
             })
         }
     }
@@ -39,9 +46,13 @@ export default function SidebarTextChannels() {
                 <ChannelsHeader title={'TEXT CHANNELS'} expanded={tExpanded} setExpanded={setTExpanded} onClick={handleAddTextChannel}/>
 
                 {tExpanded && <section className='channel__list'>
-                                {collectionDocs && collectionDocs.map((channel)  => {
-                                    <ServerChannel server={channel.channelName}/>
-                                })}
+                                       {docs.map((channel) => (
+                                           <div key={channel.id}>
+                                                <ServerChannel isTextChannel={1} channel={channel.channelName} onClick={() => 
+                                                    dispatch( setChannelInfo({ channelId: channel.id, channelName: channel.channelName }) )}
+                                                />
+                                           </div>
+                                       ))}
                             </section>}
             </section>;
 }

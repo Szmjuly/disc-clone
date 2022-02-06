@@ -13,7 +13,7 @@ import FriendsPage from './pages/FriendsPage';
 import ServerPage from './pages/ServerPage';
 import LoginPage from './pages/LoginPage'
 
-//Redux + Firebasse Stuff
+//Redux + Firebase Stuff
 import { selectUser, login, logout } from './features/userSlice';
 import { useSelector, useDispatch } from 'react-redux';
 import {auth} from './firebase/firebase'
@@ -43,7 +43,7 @@ export default function App() {
   return (
     <div className="app">
       {currentUser ? <>
-              {/* Navegation Bar - Left Most Side */}
+              {/* Nav Bar - Left Most Side */}
               <Navbar />
 
               {/* Main Window Pages / Servers */}

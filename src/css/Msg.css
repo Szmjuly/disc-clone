@@ -1,0 +1,18 @@
+.msg{
+    display: flex;
+    align-items: center;
+    padding: 20px;
+}
+
+.msg__info{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-left: 20px;
+}
+
+.msg__timestamp{
+    color: gray;
+    margin-left: 20px;
+    font-size: x-small;
+}

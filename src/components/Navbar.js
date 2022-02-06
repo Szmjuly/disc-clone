@@ -1,5 +1,5 @@
 //React
-import React from 'react';
+import React, { useState } from 'react';
 import { useNavigate } from 'react-router'
 
 //Styling
@@ -11,19 +11,31 @@ import AddIcon from '@mui/icons-material/Add'
 
 //Components
 import NavbarIcon from './NavbarIcon';
-import CreateServerDialog from './CreateServerDialog';
+
+//Redux and Firebase stuff
+import {db} from '../firebase/firebase'
+import { addDoc, collection, serverTimestamp } from 'firebase/firestore';
+import useFirestore from '../hooks/useFirestore';
 
 export default function Navbar() {
-  const [open, setOpen] = React.useState(false);
   let navigate = useNavigate();
+  const [createServerError, setCreateServerError] = useState();
+  const { docs } = useFirestore('servers');
 
-  const handleClickOpen = () => {
-    setOpen(true);
-  };
+  function handleAddServer(){
+    const serverName = prompt("Enter Server Name: ");
 
-  const handleClose = () => {
-    setOpen(false);
-  };
+    if(serverName){
+      addDoc(collection(db, "servers"), {
+        serverName: serverName,
+        createdAt: serverTimestamp(),
+      })
+      .catch((error) => {
+        setCreateServerError(error);
+        console.log("🚀 ~ file: Navbar.js ~ line 29 ~ handleAddServer ~ createServerError", createServerError);
+      })
+    }
+  }
 
   function handleHomeRoute(){ navigate('/'); }
   function handleServerRoute(){ navigate('/server'); }
@@ -35,11 +47,13 @@ export default function Navbar() {
               
               <section className='navbar__btm'>
                 <section className='server__list'>
-                  <NavbarIcon Tooltip={'Test Server'} onClick={handleServerRoute}/>
+                  {docs.map((server) => (
+                    <div key={server.id}>
+                      <NavbarIcon Tooltip={server.serverName} onClick={handleServerRoute} />
+                    </div>
+                  ))}
                 </section>
-                <NavbarIcon Icon={AddIcon} Tooltip={'Add a Server'} onClick={handleClickOpen}/>
+                <NavbarIcon Icon={AddIcon} Tooltip={'Add a Server'} onClick={handleAddServer}/>
               </section>
-
-              <CreateServerDialog open={open} onClose={handleClose}/>
             </div>);
 }
