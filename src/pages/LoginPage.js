@@ -3,13 +3,15 @@ import { Button } from '@mui/material';
 import { db, auth, provider } from '../firebase/firebase';
 import { signInWithPopup } from 'firebase/auth'
 
-import { serverTimestamp, setDoc, doc, collection, addDoc } from 'firebase/firestore';
+import { serverTimestamp, setDoc, doc } from 'firebase/firestore';
 
 export default function LoginPage() { 
-    const handleSignIn = () =>{
-        //Login...
     
+
+    const handleSignInWithEmail = (e) =>{
+        e.preventDefault();
     }
+
     
     const handleGoogleSignIn = () =>{
         // Google Login...
@@ -27,6 +29,9 @@ export default function LoginPage() {
         })
         .catch(error => alert(error.message))
     }
+
+    
+
   return <main className='login'>
             <section className='login__page'>
                 <div className='login__logo'>
@@ -34,9 +39,9 @@ export default function LoginPage() {
                 </div>
 
                 <div className='login__btns'>
-                <Button variant='contained' onClick={handleSignIn}>Sign in with Email</Button>
+                <Button disabled variant='contained' onClick={handleSignInWithEmail}>Sign in with Email</Button>
                 <Button variant='contained' onClick={handleGoogleSignIn}>Sign in with Google</Button>
                 </div>
             </section>
-            </main>;
+        </main>;
 }

@@ -8,7 +8,13 @@
 .login__page{
     display: flex;
     flex-direction: column;
-    height: 100%;
+    justify-content: space-between;
+    height: 35%;
+}
+
+.login__logo img{
+    object-fit: contain;
+    height: 150px;
 }
 
 .login__btns{
@@ -16,18 +22,14 @@
     gap: 15px;
 }
 
-.login__page button{
+.login__btns button{
     width: 300px;
     background-color: #575d64;
     color: black;
     font-weight: 600;
 }
 
-.login__page button:hover{
+.login__btns button:hover{
     background-color: #404449;
 }
 
-.login__page div img{
-    object-fit: contain;
-    height: 150px;
-}

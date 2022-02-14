@@ -1,14 +1,14 @@
 .friends__navbar{
     display: flex;
     flex-direction: row;
-    margin: 0 13px;
     align-items: center;
     justify-content: space-evenly;
     min-width: fit-content;
 }
 
 .friends__navbar li{
-    padding: 3px 8px;
+    margin-left: 13px;
+    padding: 4px 8px;
     border-radius: 5px;
 }
 

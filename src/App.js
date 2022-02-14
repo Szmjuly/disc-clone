@@ -12,6 +12,7 @@ import { Routes, Route } from 'react-router-dom';
 import FriendsPage from './pages/FriendsPage';
 import ServerPage from './pages/ServerPage';
 import LoginPage from './pages/LoginPage'
+import WordlePage from './pages/WordlePage'
 
 //Redux + Firebase Stuff
 import { selectUser, login, logout } from './features/userSlice';
@@ -33,7 +34,6 @@ export default function App() {
           email: authenticatedUser.email,
           displayName: authenticatedUser.displayName,
         }));
-
       }
       else{
         dispatch(logout());
@@ -51,6 +51,7 @@ export default function App() {
               <Routes>
                 <Route path='/' element={<FriendsPage />} />
                 <Route path='/server' element={<ServerPage />} />
+                <Route path='/wordle' element={<WordlePage />} />
               </Routes>
                     </>
                     :

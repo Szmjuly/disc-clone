@@ -1,0 +1,12 @@
+.wordle-tile{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #bfbfc455;
+    border: 2px solid #95959d55;
+    width: clamp(2.5rem, 10vmin, 1rem);
+    height: clamp(2.5rem, 10vmin, 1rem);
+    border-radius: 15px;
+    color: #d5d5d7;
+    font-size: clamp(1rem, 5vmin, 5rem);
+}

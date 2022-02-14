@@ -1,0 +1,8 @@
+.wordle-row{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 100%;
+    height: fit-content;
+}

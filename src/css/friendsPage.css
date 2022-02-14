@@ -1,7 +1,7 @@
 .activity__right__side{
     display: flex;
     flex-direction: column;
-    flex: .262;
+    flex: .3;
     box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.75);
     border-radius: 15px 0px 0px 0px;
 }

@@ -1,11 +1,12 @@
 .chat{
     display: flex;
     flex-direction: column;
-    flex: 1;
-    background-color: var(--bg-color3);
-    height: 100vh;
+    flex: .77;
+    /* background-color: var(--bg-color3); */
 }
 
 .chat__msgs{
-    flex: .95;
+    overflow-y: scroll;
+    scrollbar-width: thin;
+    flex: 1;
 }

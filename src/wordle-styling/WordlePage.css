@@ -1,0 +1,126 @@
+.wordle-page-body{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 96vh;
+    width: 100%;
+    margin: 0;
+    padding: 1em;
+    font-size: clamp(.5rem, 2.5vmin, 1.5rem);
+}
+
+.wordle-board{
+    background-color: #3F3F44;
+    width: fit-content;
+    height: fit-content;
+    border-radius: 20px;
+    box-shadow: 10px 5px 10px 0px rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    margin-bottom: 1em;
+}
+
+.guess-grid{
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    flex-grow: 1;
+    grid-template-columns: repeat(5, 4em);
+    grid-template-rows: repeat(6, 4em);
+    gap: .25em;
+}
+
+/* Tile */
+.wordle-tile{
+    display: grid;
+    place-content: center;
+    text-transform: capitalize;
+    font-weight: bold;
+    font-size: 2em;
+    color: white;
+    border: .05em solid hsla(240, 4%, 60%, 0.333);
+    border-radius: 15px;
+    user-select: none;
+}
+.wordle-tile[data-state="active"]{
+    border-color: #cdcdd896;
+}
+
+.wordle-tile[data-state="wrong"]{
+    border: none;
+    background-color: hsl(240, 5%, 15%);
+}
+
+.wordle-tile[data-state="wrong-location"]{
+    border: none;
+    background-color: hsl(61, 43%, 44%);
+}
+
+.wordle-tile[data-state="correct"]{
+    border: none;
+    background-color: hsl(113, 43%, 44%);
+}
+
+
+
+/* Keyboard */
+.keyboard{
+    display: grid;
+    grid-template-columns: repeat(20, minmax(auto, 1.25em));
+    grid-auto-rows: 3em;
+    gap: .25em;
+    justify-content: center;
+}
+
+.key{
+    font-size: inherit;
+    grid-column: span 2;
+    border: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: hsla(
+        var(--hue, 200), 
+        var(--saturation, 1%), 
+        calc(var(--lightness-offset, 0%) + var(--lightness, 50%)), 
+        var(--alpha, 100%));
+    color: white;
+    text-transform: uppercase;
+    border-radius: 1em;
+    cursor: pointer;
+    user-select: none;
+}
+
+.key.large{
+    grid-column: span 3;
+}
+
+.key svg{
+    width: 1.75em;
+    height: 1.75em;
+}
+
+.key:hover, .key:focus{
+    --lightness-offset: 10%;
+}
+
+.key:focus{
+    outline: 1px solid hsl(240, 100%, 39%) !important;
+}
+
+.key.wrong{
+    --lightness: 23%;
+}
+
+.key.wrong-location{
+    --hue: 52;
+    --saturation: 50%;
+    --lightness: 45%;
+}
+
+.key.correct{
+    --hue: 120;
+    --saturation: 40%;
+    --lightness: 45%;
+}

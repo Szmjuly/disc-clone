@@ -6,8 +6,7 @@ import { useNavigate } from 'react-router'
 import '../css/Navbar.css'
 
 //Icons
-import HomeIcon from '@mui/icons-material/Home';
-import AddIcon from '@mui/icons-material/Add'
+import {Home, Add, WifiChannel, AddBox} from '@mui/icons-material';
 
 //Components
 import NavbarIcon from './NavbarIcon';
@@ -16,17 +15,21 @@ import NavbarIcon from './NavbarIcon';
 import {db} from '../firebase/firebase'
 import { addDoc, collection, serverTimestamp } from 'firebase/firestore';
 import useFirestore from '../hooks/useFirestore';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+import { selectUser, setUserInfo } from '../features/userSlice';
 import { setServerInfo } from '../features/serverSlice';
 
 export default function Navbar() {
   let navigate = useNavigate();
   const dispatch = useDispatch();
 
+  const currentUser = useSelector(selectUser);
+
   const [createServerError, setCreateServerError] = useState();
   const { docs } = useFirestore('servers');
 
-  function handleAddServer(){
+  function handleAddServer(e){
+    e.preventDefault();
     const serverName = prompt("Enter Server Name: ");
 
     if(serverName){
@@ -35,7 +38,10 @@ export default function Navbar() {
         createdAt: serverTimestamp(),
       })
       .then(() => {
-        addDoc(collection(db, "users/"))
+        addDoc(collection(db, "users/" + currentUser.uid + '/servers'), {
+          serverName: serverName,
+          createdAt: serverTimestamp(),
+        })
       })
       .catch((error) => {
         setCreateServerError(error);
@@ -44,22 +50,32 @@ export default function Navbar() {
     }
   }
 
+  function handleJoinServer(e){
+    e.preventDefault();
+    const serverConnectId = prompt("Enter the Server Id");
+
+    if(serverConnectId){}
+  }
+
   function handleHomeRoute(){ navigate('/'); }
+  function handleWordleRoute(){ navigate('/wordle'); }
 
     return (<div className='navbar'>
               <section className='navbar__top'>
-                <NavbarIcon isHomeBtn={1} Icon={HomeIcon} Tooltip={'Home'} onClick={handleHomeRoute}/>
+                <NavbarIcon isHomeBtn={1} Icon={Home} Tooltip={'Home'} onClick={handleHomeRoute}/>
+                <NavbarIcon Tooltip={'Wordle'} onClick={handleWordleRoute} />
               </section>
               
               <section className='navbar__btm'>
                 <section className='server__list'>
                   {docs.map((server) => (
                     <div key={server.id}>
-                      <NavbarIcon Tooltip={server.serverName} onClick={() => {dispatch( setServerInfo({ serverId: server.id, serverName: server.serverName }) ); navigate('/server'); }} />
+                      <NavbarIcon Icon={WifiChannel} Tooltip={server.serverName} onClick={(e) => { localStorage.setItem('last-server-name', JSON.stringify(server.serverName)); dispatch(setServerInfo({ serverId: server.id, serverName: server.serverName })); navigate('/server');  }} />
                     </div>
                   ))}
                 </section>
-                <NavbarIcon Icon={AddIcon} Tooltip={'Add a Server'} onClick={handleAddServer}/>
+                <NavbarIcon Icon={AddBox} Tooltip={'Join a Server'} onClick={handleJoinServer}/>
+                <NavbarIcon Icon={Add} Tooltip={'Create a Server'} onClick={handleAddServer}/>
               </section>
             </div>);
 }
